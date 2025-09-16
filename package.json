@@ -1,0 +1,12 @@
+{
+  "name": "cordova-plugin-legic",
+  "version": "1.0.0",
+  "description": "Cordova plugin for LEGIC Connect SDK",
+  "cordova": {
+    "id": "com.ofe.legicplugin",
+    "platforms": ["android", "ios"]
+  },
+  "keywords": ["cordova", "legic", "outsystems", "plugin"],
+  "author": "Your Name",
+  "license": "MIT"
+}
