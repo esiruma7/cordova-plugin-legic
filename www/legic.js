@@ -1,9 +1,15 @@
 var exec = require('cordova/exec');
 
-var Legic = {
-    echo: function (message, successCallback, errorCallback) {
-        exec(successCallback, errorCallback, "LegicPlugin", "echo", [message]);
-    }
+exports.echo = function (message, success, error) {
+    exec(success, error, "LegicPlugin", "echo", [message]);
 };
 
-module.exports = Legic;
+exports.initSdk = function (success, error) {
+    exec(success, error, "LegicPlugin", "initSdk", []);
+};
+
+exports.getVersion = function (success, error) {
+    exec(success, error, "LegicPlugin", "getVersion", []);
+};
+
+// module.exports = Legic;
