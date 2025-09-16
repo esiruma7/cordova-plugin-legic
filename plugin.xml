@@ -11,24 +11,25 @@
         <clobbers target="Legic"/>
     </js-module>
 
-    <platform name="android">
-        <source-file src="src/android/com/ofe/legic/LegicPlugin.java"
-                     target-dir="src/com/ofe/legic"/>
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="LegicPlugin">
-                <param name="android-package" value="com.ofe.legic.LegicPlugin"/>
-            </feature>
-        </config-file>
-    </platform>
+	<platform name="android">
+	  <source-file src="src/android/com/ofe/legic/LegicPlugin.java"
+				   target-dir="src/com/ofe/legic"/>
+	  <framework src="src/android/libs/legicmobilesdk.aar" custom="true"/>
+	  <config-file target="res/xml/config.xml" parent="/*">
+		<feature name="LegicPlugin">
+		  <param name="android-package" value="com.ofe.legic.LegicPlugin"/>
+		</feature>
+	  </config-file>
+	</platform>
 
-    <platform name="ios">
-        <source-file src="src/ios/LegicPlugin.swift"/>
-        <framework src="src/ios/LegicMobileSdk.xcframework" custom="true"/>
-        <config-file target="config.xml" parent="/*">
-            <feature name="LegicPlugin">
-                <param name="ios-package" value="LegicPlugin"/>
-            </feature>
-        </config-file>
-    </platform>
+	<platform name="ios">
+	  <source-file src="src/ios/LegicPlugin.swift"/>
+	  <framework src="src/ios/LEGICMobileSDK.xcframework" custom="true"/>
+	  <config-file target="config.xml" parent="/*">
+		<feature name="LegicPlugin">
+		  <param name="ios-package" value="LegicPlugin"/>
+		</feature>
+	  </config-file>
+	</platform>
 
 </plugin>
