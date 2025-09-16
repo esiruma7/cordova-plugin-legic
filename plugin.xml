@@ -34,7 +34,7 @@
                 <param name="ios-package" value="LegicPlugin"/>
             </feature>
         </config-file>
+        <!-- Ensure Swift compiles -->
         <preference name="SwiftVersion" value="5.0"/>
     </platform>
-
 </plugin>
