@@ -28,7 +28,7 @@
     <!-- iOS -->
 	<platform name="ios">
 		<source-file src="src/ios/LegicPlugin.swift" target-dir="src/ios"/>
-		<framework src="src/ios/LegicMobileSdk.framework"/>
+		<framework src="ios/LegicMobileSdk.framework" type="framework"/>
 		<config-file target="config.xml" parent="/*">
 			<feature name="LegicPlugin">
 				<param name="ios-package" value="LegicPlugin"/>
