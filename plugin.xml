@@ -26,15 +26,18 @@
     </platform>
 
     <!-- iOS -->
-    <platform name="ios">
-        <source-file src="src/ios/LegicPlugin.swift"/>
-        <framework src="src/ios/LegicMobileSdk.xcframework" custom="true"/>
-        <config-file target="config.xml" parent="/*">
-            <feature name="LegicPlugin">
-                <param name="ios-package" value="LegicPlugin"/>
-            </feature>
-        </config-file>
-        <!-- Ensure Swift compiles -->
-        <preference name="SwiftVersion" value="5.0"/>
-    </platform>
+	<platform name="ios">
+		<source-file src="src/ios/LegicPlugin.swift"/>
+		<framework src="src/ios/LegicMobileSdk.xcframework" custom="true"/>
+		<config-file target="config.xml" parent="/*">
+			<feature name="LegicPlugin">
+				<param name="ios-package" value="LegicPlugin"/>
+			</feature>
+		</config-file>
+		<preference name="SwiftVersion" value="5.0"/>
+	</platform>
+	
+	<feature name="LegicPlugin">
+	   <param name="ios-package" value="LegicPlugin"/>
+	</feature>
 </plugin>
