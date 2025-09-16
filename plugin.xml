@@ -14,15 +14,10 @@
 
     <!-- ANDROID -->
     <platform name="android">
-        <!-- Your plugin Java file -->
         <source-file src="src/android/com/ofe/legic/LegicPlugin.java"
                      target-dir="src/com/ofe/legic"/>
-        
-        <!-- LEGIC SDK JAR (runtime) -->
         <source-file src="src/android/libs/LEGIC-Mobile-SDK-for-Android-V3.1.2.0.jar"
                      target-dir="libs"/>
-
-        <!-- Register plugin -->
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="LegicPlugin">
                 <param name="android-package" value="com.ofe.legic.LegicPlugin"/>
@@ -32,20 +27,13 @@
 
     <!-- iOS -->
     <platform name="ios">
-        <!-- Your plugin Swift file -->
         <source-file src="src/ios/LegicPlugin.swift"/>
-
-        <!-- LEGIC SDK XCFramework -->
         <framework src="src/ios/LegicMobileSdk.xcframework" custom="true"/>
-
-        <!-- Register plugin -->
         <config-file target="config.xml" parent="/*">
             <feature name="LegicPlugin">
                 <param name="ios-package" value="LegicPlugin"/>
             </feature>
         </config-file>
-
-        <!-- Fix Swift build error -->
         <preference name="SwiftVersion" value="5.0"/>
     </platform>
 
