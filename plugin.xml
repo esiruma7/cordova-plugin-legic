@@ -16,8 +16,7 @@
     <platform name="android">
         <source-file src="src/android/com/ofe/legic/LegicPlugin.java"
                      target-dir="src/com/ofe/legic"/>
-        <source-file src="src/android/libs/LEGIC-Mobile-SDK-for-Android-V3.1.2.0.jar"
-                     target-dir="libs"/>
+        <lib-file src="src/android/libs/LEGIC-Mobile-SDK-for-Android-V3.1.2.0.jar" />
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="LegicPlugin">
                 <param name="android-package" value="com.ofe.legic.LegicPlugin"/>
