@@ -5,7 +5,8 @@ import Cordova
     @objc(echo:)
     func echo(command: CDVInvokedUrlCommand) {
         let message = command.arguments.first as? String ?? "No message"
-        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Echo: \(message)")
-        self.commandDelegate.send(result, callbackId: command.callbackId)
+        let pluginResult = CDVPluginResult(status: CDVCommandStatus_OK,
+                                           messageAs: "Echo: \(message)")
+        self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
     }
 }
