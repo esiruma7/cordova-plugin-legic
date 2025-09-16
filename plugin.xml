@@ -4,32 +4,49 @@
         xmlns:android="http://schemas.android.com/apk/res/android">
 
     <name>LEGIC Plugin</name>
-    <description>LEGIC Connect SDK Cordova plugin for OutSystems</description>
+    <description>LEGIC Mobile SDK Cordova plugin for OutSystems</description>
     <license>MIT</license>
 
+    <!-- JavaScript interface -->
     <js-module src="www/legic.js" name="Legic">
         <clobbers target="Legic"/>
     </js-module>
 
-	<platform name="android">
-	  <source-file src="src/android/com/ofe/legic/LegicPlugin.java"
-				   target-dir="src/com/ofe/legic"/>
-	  <framework src="src/android/libs/legicmobilesdk.aar" custom="true"/>
-	  <config-file target="res/xml/config.xml" parent="/*">
-		<feature name="LegicPlugin">
-		  <param name="android-package" value="com.ofe.legic.LegicPlugin"/>
-		</feature>
-	  </config-file>
-	</platform>
+    <!-- ANDROID -->
+    <platform name="android">
+        <!-- Your plugin Java file -->
+        <source-file src="src/android/com/ofe/legic/LegicPlugin.java"
+                     target-dir="src/com/ofe/legic"/>
+        
+        <!-- LEGIC SDK JAR (runtime) -->
+        <source-file src="src/android/libs/LEGIC-Mobile-SDK-for-Android-V3.1.2.0.jar"
+                     target-dir="libs"/>
 
-	<platform name="ios">
-	  <source-file src="src/ios/LegicPlugin.swift"/>
-	  <framework src="src/ios/LEGICMobileSDK.xcframework" custom="true"/>
-	  <config-file target="config.xml" parent="/*">
-		<feature name="LegicPlugin">
-		  <param name="ios-package" value="LegicPlugin"/>
-		</feature>
-	  </config-file>
-	</platform>
+        <!-- Register plugin -->
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="LegicPlugin">
+                <param name="android-package" value="com.ofe.legic.LegicPlugin"/>
+            </feature>
+        </config-file>
+    </platform>
+
+    <!-- iOS -->
+    <platform name="ios">
+        <!-- Your plugin Swift file -->
+        <source-file src="src/ios/LegicPlugin.swift"/>
+
+        <!-- LEGIC SDK XCFramework -->
+        <framework src="src/ios/LegicMobileSdk.xcframework" custom="true"/>
+
+        <!-- Register plugin -->
+        <config-file target="config.xml" parent="/*">
+            <feature name="LegicPlugin">
+                <param name="ios-package" value="LegicPlugin"/>
+            </feature>
+        </config-file>
+
+        <!-- Fix Swift build error -->
+        <preference name="SwiftVersion" value="5.0"/>
+    </platform>
 
 </plugin>
