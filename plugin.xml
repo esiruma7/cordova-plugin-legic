@@ -14,21 +14,21 @@
 
     <!-- ANDROID -->
 	<platform name="android">
-		<!-- Java bridge -->
+		<!-- Plugin Java file -->
 		<source-file src="src/android/com/ofe/legic/LegicPlugin.java"
-					 target-dir="src/com/ofe/legic"/>
+						target-dir="src/com/ofe/legic"/>
 
-		<!-- Import LEGIC SDK JAR -->
+		<!-- Include AAR instead of JAR -->
 		<framework src="src/android/libs/legicmobilesdk-release.aar" custom="true"/>
 
-		<!-- Feature declaration -->
+		<!-- Register the feature -->
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="LegicPlugin">
 				<param name="android-package" value="com.ofe.legic.LegicPlugin"/>
 			</feature>
 		</config-file>
 	</platform>
-
+	
     <!-- iOS -->
 	<platform name="ios">
 		<source-file src="src/ios/LegicPlugin.swift" target-dir="src/ios"/>
