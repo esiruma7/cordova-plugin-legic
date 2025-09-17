@@ -20,7 +20,7 @@
 					 target-dir="src/com/ofe/legic"/>
 
 		<!-- AAR reference -->
-		<framework src="src/android/libs/legicmobilesdk-release.aar" type="aar"/>
+		<framework src="src/android/libs/legicmobilesdk-release.aar" custom="true" type="aar"/>
 
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="LegicPlugin">
@@ -37,8 +37,8 @@
 			<feature name="LegicPlugin">
 				<param name="ios-package" value="LegicPlugin"/>
 			</feature>
-		</config-file>
-		<preference name="SwiftVersion" value="5.0"/>-->
+		</config-file>-->
+		<preference name="SwiftVersion" value="5.0"/>
 	</platform>
 
 </plugin>
