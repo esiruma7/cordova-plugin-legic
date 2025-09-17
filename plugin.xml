@@ -17,7 +17,7 @@
 		<source-file src="src/android/com/ofe/legic/LegicPlugin.java"
 					 target-dir="src/com/ofe/legic"/>
 
-		<!-- Force Cordova/Gradle to link the JAR -->
+		<!-- Ensure the JAR is linked -->
 		<lib-file src="src/android/libs/LEGIC-Mobile-SDK-for-Android-V3.1.2.0.jar" />
 
 		<config-file target="res/xml/config.xml" parent="/*">
