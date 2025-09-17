@@ -14,8 +14,12 @@
 
     <!-- ANDROID -->
 	<platform name="android">
-		<source-file src="src/android/com/ofe/legic/LegicPlugin.java" target-dir="src/com/ofe/legic"/>
-		<framework src="src/android/libs/LEGIC-Mobile-SDK-for-Android-V3.1.2.0.jar" custom="true"/>
+		<source-file src="src/android/com/ofe/legic/LegicPlugin.java"
+					 target-dir="src/com/ofe/legic"/>
+
+		<!-- Force Gradle to compile the JAR -->
+		<framework src="libs/LEGIC-Mobile-SDK-for-Android-V3.1.2.0.jar" type="gradleReference"/>
+
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="LegicPlugin">
 				<param name="android-package" value="com.ofe.legic.LegicPlugin"/>
