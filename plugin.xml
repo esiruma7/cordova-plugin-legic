@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin id="com.ofe.legicplugin" version="1.0.2"
-
+<plugin id="com.ofe.legicplugin" version="1.0.0"
         xmlns="http://apache.org/cordova/ns/plugins"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
     <name>LEGIC Plugin</name>
-    <description>LEGIC Mobile SDK Cordova plugin for OutSystems</description>
+    <description>LEGIC Mobile SDK Cordova plugin for OutSystems (Android only)</description>
     <license>MIT</license>
 
     <!-- JavaScript interface -->
@@ -14,20 +13,21 @@
     </js-module>
 
     <!-- ANDROID -->
-	<platform name="android">
-		<!-- Java bridge -->
-		<source-file src="src/android/com/ofe/legic/LegicPlugin.java"
-					 target-dir="src/com/ofe/legic"/>
+    <platform name="android">
+        <!-- Java entry point -->
+        <source-file src="src/android/com/ofe/legic/LegicPlugin.java"
+                     target-dir="src/com/ofe/legic"/>
 
-		<!-- AAR reference -->
-		<framework src="src/android/libs/legicmobilesdk-release.aar" custom="true" type="aar"/>
+        <!-- AAR in flat libs/ folder -->
+        <framework src="libs/legicmobilesdk-release.aar" custom="true" type="aar"/>
 
-		<config-file target="res/xml/config.xml" parent="/*">
-			<feature name="LegicPlugin">
-				<param name="android-package" value="com.ofe.legic.LegicPlugin"/>
-			</feature>
-		</config-file>
-	</platform>
+        <!-- Declare feature -->
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="LegicPlugin">
+                <param name="android-package" value="com.ofe.legic.LegicPlugin"/>
+            </feature>
+        </config-file>
+    </platform>
 		
     <!-- iOS -->
 	<platform name="ios">
