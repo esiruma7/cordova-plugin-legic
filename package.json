@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-legic",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Cordova plugin for LEGIC Mobile SDK (Android only)",
   "cordova": {
     "id": "com.ofe.legicplugin",

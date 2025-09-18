@@ -1,7 +1,7 @@
-<plugin id="com.ofe.legicplugin" version="1.0.1"
+<plugin id="com.ofe.legicplugin" version="1.0.3"
         xmlns="http://apache.org/cordova/ns/plugins"
         xmlns:android="http://schemas.android.com/apk/res/android">
-
+		
     <name>LEGIC Plugin</name>
     <description>LEGIC Mobile SDK Cordova plugin for OutSystems</description>
     <license>MIT</license>
