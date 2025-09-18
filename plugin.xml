@@ -13,19 +13,13 @@
     </js-module>
 
     <!-- ANDROID -->
-    <platform name="android">
-        <!-- Plugin Java -->
-        <source-file src="src/android/com/ofe/legic/LegicPlugin.java"
-                     target-dir="src/com/ofe/legic"/>
+	<platform name="android">
+		<source-file src="src/android/com/ofe/legic/LegicPlugin.java"
+					 target-dir="src/com/ofe/legic"/>
 
-        <!-- Ensure .aar is copied into app/libs -->
-        <source-file src="src/android/libs/legicmobilesdk-release.aar"
-                     target-dir="app/libs"/>
-
-        <!-- Register the AAR with Gradle -->
-        <framework src="app/libs/legicmobilesdk-release.aar"
-                   custom="true" type="aar"/>
-    </platform>
+		<framework src="src/android/libs/legicmobilesdk-release.aar"
+				   custom="true" type="aar"/>
+	</platform>
 
     <!-- iOS -->
     <platform name="ios">
