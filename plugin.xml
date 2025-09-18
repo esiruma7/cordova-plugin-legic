@@ -12,18 +12,20 @@
     </js-module>
 
     <!-- ANDROID -->
-    <platform name="android">
-        <source-file src="src/android/com/ofe/legic/LegicPlugin.java"
-                     target-dir="src/com/ofe/legic"/>
-        <source-file src="src/android/libs/legicmobilesdk-release.aar"
-                     target-dir="libs"/>
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="LegicPlugin">
-                <param name="android-package" value="com.ofe.legic.LegicPlugin"/>
-            </feature>
-        </config-file>
-    </platform>
-	
+	<platform name="android">
+		<source-file src="src/android/com/ofe/legic/LegicPlugin.java"
+					 target-dir="src/com/ofe/legic"/>
+		
+		<!-- Instead of source-file, declare the AAR as a library -->
+		<framework src="src/android/libs/legicmobilesdk-release.aar" custom="true"/>
+		
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="LegicPlugin">
+				<param name="android-package" value="com.ofe.legic.LegicPlugin"/>
+			</feature>
+		</config-file>
+	</platform>
+		
     <!-- iOS -->
 	<platform name="ios">
 		<source-file src="src/ios/LegicPlugin.swift" target-dir="src/ios"/>
