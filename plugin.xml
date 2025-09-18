@@ -17,7 +17,7 @@
 		<source-file src="src/android/com/ofe/legic/LegicPlugin.java"
 					 target-dir="src/com/ofe/legic" />
 
-		<!-- Place AAR in src/android/libs and reference it -->
+		<!-- Reference the AAR properly -->
 		<framework src="src/android/libs/legicmobilesdk-release.aar"
 				   custom="true"
 				   type="aar" />
