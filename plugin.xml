@@ -11,13 +11,14 @@
     </js-module>
 
     <!-- Android -->
-    <platform name="android">
-        <!-- Your plugin Java code -->
-        <source-file src="src/android/com/ofe/legic/LegicPlugin.java"
-                     target-dir="src/com/ofe/legic" />
+	<platform name="android">
+		<!-- Java source -->
+		<source-file src="src/android/com/ofe/legic/LegicPlugin.java"
+					 target-dir="src/com/ofe/legic"/>
 
-        <!-- Reference the AAR -->
-        <source-file src="src/android/libs/legicmobilesdk-release.aar"
-             target-dir="libs" />
-    </platform>
+		<!-- Bundle the AAR -->
+		<framework src="src/android/libs/legicmobilesdk-release.aar"
+				   custom="true"
+				   type="aar"/>
+	</platform>
 </plugin>
