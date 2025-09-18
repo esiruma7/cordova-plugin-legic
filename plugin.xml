@@ -1,4 +1,4 @@
-<plugin id="com.ofe.legicplugin" version="1.0.3"
+<plugin id="com.ofe.legicplugin" version="1.0.5"
         xmlns="http://apache.org/cordova/ns/plugins"
         xmlns:android="http://schemas.android.com/apk/res/android">
 		
@@ -13,29 +13,23 @@
 
     <!-- ANDROID -->
 	<platform name="android">
-		<source-file src="src/android/com/ofe/legic/LegicPlugin.java"
-					 target-dir="src/com/ofe/legic"/>
-		
-		<!-- Instead of source-file, declare the AAR as a library -->
 		<framework src="src/android/libs/legicmobilesdk-release.aar" custom="true"/>
-		
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="LegicPlugin">
 				<param name="android-package" value="com.ofe.legic.LegicPlugin"/>
 			</feature>
 		</config-file>
 	</platform>
-		
+			
     <!-- iOS -->
 	<platform name="ios">
-		<source-file src="src/ios/LegicPlugin.swift" target-dir="src/ios"/>
-		<!--<framework src="src/ios/LegicMobileSdk.xcframework" custom="true"/>
+		<framework src="src/ios/LegicMobileSdk.xcframework" custom="true"/>
+		<source-file src="src/ios/LegicPlugin.swift"/>
 		<config-file target="config.xml" parent="/*">
 			<feature name="LegicPlugin">
 				<param name="ios-package" value="LegicPlugin"/>
 			</feature>
-		</config-file>-->
-		<preference name="SwiftVersion" value="5.0"/>
+		</config-file>
 	</platform>
 
 </plugin>
