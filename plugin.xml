@@ -18,7 +18,7 @@
 		<framework src="src/android/libs/legicmobilesdk-release.aar"
 				   custom="true" type="aar"/>
 	</platform>
-			
+
     <!-- iOS -->
 	<platform name="android">
 		<framework src="src/android/libs/legicmobilesdk-release.aar" custom="true" type="aar"/>
