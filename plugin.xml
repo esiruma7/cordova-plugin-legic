@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin id="com.ofe.legicplugin" version="1.0.0"
+<plugin id="com.ofe.legicplugin"
+        version="1.0.0"
         xmlns="http://apache.org/cordova/ns/plugins"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
     <name>LEGIC Plugin</name>
-    <description>LEGIC Mobile SDK Cordova plugin for OutSystems (Android only)</description>
-    <license>MIT</license>
+    <description>Cordova plugin wrapper for LEGIC Mobile SDK</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova, legic, sdk</keywords>
 
     <!-- JavaScript interface -->
     <js-module src="www/legic.js" name="Legic">
-        <clobbers target="Legic"/>
+        <clobbers target="Legic" />
     </js-module>
 
-    <!-- ANDROID -->
+    <!-- Android platform -->
     <platform name="android">
-        <!-- Java entry point -->
-        <source-file src="src/android/com/ofe/legic/LegicPlugin.java"
-                     target-dir="src/com/ofe/legic"/>
+        <!-- Your Cordova bridge -->
+        <source-file src="src/android/LegicPlugin.java"
+                     target-dir="src/com/ofe/legicplugin" />
 
-        <!-- AAR in flat libs/ folder -->
-        <framework src="libs/legicmobilesdk-release.aar" custom="true" type="aar"/>
+        <!-- Reference the AAR -->
+        <framework src="src/android/legicmobilesdk-release.aar"
+                   custom="true" />
 
-        <!-- Declare feature -->
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="LegicPlugin">
-                <param name="android-package" value="com.ofe.legic.LegicPlugin"/>
-            </feature>
+        <!-- Ensure Gradle knows about AAR dependencies -->
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <meta-data android:name="com.ofe.legicplugin" android:value="enabled" />
         </config-file>
     </platform>
 		
