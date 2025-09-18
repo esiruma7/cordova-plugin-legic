@@ -15,8 +15,8 @@
 	<platform name="android">
 		<source-file src="src/android/com/ofe/legic/LegicPlugin.java"
 					 target-dir="src/com/ofe/legic"/>
-		<source-file src="src/android/libs/legicmobilesdk-release.aar" 
-             target-dir="app/libs" />
+		<source-file src="src/android/libs/legicmobilesdk-release.aar"
+					 target-dir="libs" />
 	</platform>
 
     <!-- iOS -->
