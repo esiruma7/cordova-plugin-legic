@@ -12,14 +12,17 @@
 
     <!-- Android -->
 	<platform name="android">
-		<!-- Java source -->
 		<source-file src="src/android/com/ofe/legic/LegicPlugin.java"
-					 target-dir="src/com/ofe/legic"/>
+					 target-dir="src/com/ofe/legic" />
 
-		<!-- Bundle AAR -->
-		<framework src="src/android/legicmobilesdk-release.aar"
+		<!-- Copy AAR into app/libs -->
+		<source-file src="src/android/legicmobilesdk-release.aar"
+					 target-dir="app/libs" />
+
+		<!-- Ensure Gradle links against it -->
+		<framework src="app/libs/legicmobilesdk-release.aar"
 				   custom="true"
-				   type="aar"/>
+				   type="aar" />
 	</platform>
 
 </plugin>
