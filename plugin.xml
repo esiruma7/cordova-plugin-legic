@@ -16,7 +16,7 @@
 					 target-dir="src/com/ofe/legic" />
 
 		<!-- Copy AAR into app/libs -->
-		<source-file src="src/android/legicmobilesdk-release.aar"
+		<source-file src="src/android/libs/legicmobilesdk-release.aar"
 					 target-dir="app/libs" />
 
 		<!-- Ensure Gradle links against it -->
