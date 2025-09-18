@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <plugin id="com.ofe.legicplugin" version="1.0.9"
         xmlns="http://apache.org/cordova/ns/plugins"
         xmlns:android="http://schemas.android.com/apk/res/android">
-		
+
     <name>LEGIC Plugin</name>
     <description>LEGIC Mobile SDK Cordova plugin for OutSystems</description>
     <license>MIT</license>
@@ -12,16 +13,19 @@
     </js-module>
 
     <!-- ANDROID -->
-	<platform name="android">
-		<!-- Java source -->
-		<source-file src="src/android/com/ofe/legic/LegicPlugin.java"
-					 target-dir="src/com/ofe/legic" />
+    <platform name="android">
+        <!-- Plugin Java -->
+        <source-file src="src/android/com/ofe/legic/LegicPlugin.java"
+                     target-dir="src/com/ofe/legic"/>
 
-		<!-- Copy AAR into app/libs -->
-		<source-file src="src/android/libs/legicmobilesdk-release.aar"
-					 target-dir="app/libs" />
-	</platform>
+        <!-- Ensure .aar is copied into app/libs -->
+        <source-file src="src/android/libs/legicmobilesdk-release.aar"
+                     target-dir="app/libs"/>
 
+        <!-- Register the AAR with Gradle -->
+        <framework src="app/libs/legicmobilesdk-release.aar"
+                   custom="true" type="aar"/>
+    </platform>
 
     <!-- iOS -->
     <platform name="ios">
